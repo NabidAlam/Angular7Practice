@@ -30,15 +30,23 @@ import { Component, OnInit } from '@angular/core';
             </ng-template>
 
 
-<div *ngIf="check; then thenBlock1; else elseBlock1"></div>
+            <div *ngIf="check; then thenBlock1; else elseBlock1"></div>
 
-<ng-template #thenBlock1>
-<h2>Then block</h2>
-</ng-template>
+            <ng-template #thenBlock1>
+            <h2>Then block</h2>
+            </ng-template>
 
-<ng-template #elseBlock1>
-<h2>Else block</h2>
-</ng-template>
+            <ng-template #elseBlock1>
+            <h2>Else block</h2>
+            </ng-template>
+
+
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'red'">Red</div>
+  <div *ngSwitchCase="'blue'">Blue</div>
+  <div *ngSwitchCase="'green'">Green</div>
+  <div *ngSwitchDefault>Default</div>
+</div>
 
 
               `,
@@ -58,6 +66,8 @@ import { Component, OnInit } from '@angular/core';
 
 export class TestComponent implements OnInit {
 
+
+public color = 'black';
 
   public name = 'Nabid Alam';
   public successClass = 'text-success';
