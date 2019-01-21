@@ -21,6 +21,14 @@ import { Component, OnInit } from '@angular/core';
 <input [(ngModel)]="name" type="text">
 {{name}}
 
+<h2 *ngIf="check; else elseBlock">
+If testing
+</h2>
+
+<ng-template #elseBlock>
+<h2>If testing is hidden</h2>
+</ng-template>
+
               `,
   styles: [`
   .text-success{
@@ -34,6 +42,8 @@ import { Component, OnInit } from '@angular/core';
   }
   `]
 })
+
+
 export class TestComponent implements OnInit {
 
 
@@ -42,7 +52,7 @@ export class TestComponent implements OnInit {
   public hasError = false;
   public isSpecial = true;
   public greeting = '';
-
+public check = !true;
 
 public highlightColor = 'orange';
 
@@ -74,3 +84,4 @@ public titleStyles = {
     console.log(value);
   }
 }
+
