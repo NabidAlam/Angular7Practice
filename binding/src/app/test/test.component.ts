@@ -49,6 +49,12 @@ import { Component, OnInit } from '@angular/core';
 </div>
 
 
+
+<div *ngFor="let color of colors; index as i; first as f">
+<h2>{{f}} {{i}} {{color}} {{o}}</h2>
+</div>
+
+
               `,
   styles: [`
   .text-success{
@@ -68,6 +74,10 @@ export class TestComponent implements OnInit {
 
 
 public color = 'black';
+
+
+public colors = ['red', 'blue', 'green', 'yellow'];
+
 
   public name = 'Nabid Alam';
   public successClass = 'text-success';
