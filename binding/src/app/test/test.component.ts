@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -54,7 +54,7 @@ import { Component, OnInit } from '@angular/core';
 <h2>{{f}} {{i}} {{color}} {{o}}</h2>
 </div>
 
-
+<h2>{{"Hello " + name1}}</h2>
               `,
   styles: [`
   .text-success{
@@ -72,11 +72,17 @@ import { Component, OnInit } from '@angular/core';
 
 export class TestComponent implements OnInit {
 
+// tslint:disable-next-line:no-input-rename
+@Input('parentData') public name1;
 
 public color = 'black';
 
 
 public colors = ['red', 'blue', 'green', 'yellow'];
+
+
+
+
 
 
   public name = 'Nabid Alam';
