@@ -18,16 +18,28 @@ import { Component, OnInit } from '@angular/core';
             <button (click)="greeting='Welcome Nabid'">Greet</button>{{greeting}}
             <input #myInput type="text">
             <button (click)="logMessage(myInput.value)">Log</button>
-<input [(ngModel)]="name" type="text">
-{{name}}
+            <input [(ngModel)]="name" type="text">
+            {{name}}
 
-<h2 *ngIf="check; else elseBlock">
-If testing
-</h2>
+            <h2 *ngIf="check; else elseBlock">
+            If testing
+            </h2>
 
-<ng-template #elseBlock>
-<h2>If testing is hidden</h2>
+            <ng-template #elseBlock>
+            <h2>If testing is hidden</h2>
+            </ng-template>
+
+
+<div *ngIf="check; then thenBlock1; else elseBlock1"></div>
+
+<ng-template #thenBlock1>
+<h2>Then block</h2>
 </ng-template>
+
+<ng-template #elseBlock1>
+<h2>Else block</h2>
+</ng-template>
+
 
               `,
   styles: [`
@@ -52,7 +64,7 @@ export class TestComponent implements OnInit {
   public hasError = false;
   public isSpecial = true;
   public greeting = '';
-public check = !true;
+  check = false;
 
 public highlightColor = 'orange';
 
